@@ -53,7 +53,7 @@ public class JwtService {
         return claimsResolver.apply(claims);
     }
     public   boolean istokenValid(String token , UserDetails userDetails){
-        final String username = extractUserName( token);
+        final String username = extractUserName(token);
         return (username.equals(userDetails.getUsername()));
     }
 

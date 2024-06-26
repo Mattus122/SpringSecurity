@@ -3,6 +3,7 @@ package com.example.AuthenticationProject.service;
 import com.example.AuthenticationProject.entity.User;
 import com.example.AuthenticationProject.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.apache.coyote.BadRequestException;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -18,7 +19,7 @@ public class AdminService {
             userRepository.deleteById(id);
         }
         else{
-            throw new Exception("User Not Found");
+            throw new BadRequestException("Bad Credentials");
         }
     }
 }
